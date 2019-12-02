@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CashbackHackServiceTest {
 
-    @Test
-    void cashbackNotChargedPayAddition() {
+@Test
+void cashbackNotChargedPayAddition() {
         CashbackHackService cashback = new CashbackHackService();
          int amount = 900;
 
@@ -17,8 +17,8 @@ class CashbackHackServiceTest {
          assertEquals(expected, actual);
     }
 
-    @Test
-    void cashbackCahrgedFrom1000() {
+@Test
+void cashbackChargedFrom1000() {
         CashbackHackService cashback1000 = new CashbackHackService();
         int amount = 1000;
 
@@ -27,6 +27,18 @@ class CashbackHackServiceTest {
 
         assertEquals(expected, actual);
     }
+    
+ @Test
+ void cashbackChargedFrom2000() {
+     CashbackHackService cashback2000 = new CashbackHackService();
+     int amount = 2000;
+     
+     int actual = cashback2000.remain(amount);
+     int expected = 2;
+     
+     assertEquals(expected, actual);
+ }
+   
 
 
 }
