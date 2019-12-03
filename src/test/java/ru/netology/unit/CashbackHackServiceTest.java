@@ -10,9 +10,10 @@ class CashbackHackServiceTest {
 void cashbackNotChargedPayAddition() {
         CashbackHackService cashback = new CashbackHackService();
          int amount = 900;
+         int  payInAddition = boundary - amount;
 
          int actual = cashback.remain(amount);
-         int expected = 0;
+         String expected = "Вам нужно докупить на " + payInAddition;
 
          assertEquals(expected, actual);
     }
@@ -23,22 +24,12 @@ void cashbackChargedFrom1000() {
         int amount = 1000;
 
         int actual = cashback1000.remain(amount);
-        int expected = 1;
+        String expected = "Вам начислен кэшбэк" ;
 
         assertEquals(expected, actual);
     }
     
- @Test
- void cashbackChargedFrom2000() {
-     CashbackHackService cashback2000 = new CashbackHackService();
-     int amount = 2000;
-     
-     int actual = cashback2000.remain(amount);
-     int expected = 2;
-     
-     assertEquals(expected, actual);
- }
-   
+
 
 
 }
